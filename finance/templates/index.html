@@ -1,0 +1,90 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  PORTFOLIO
+{% endblock %}
+
+{% block main %}
+ 
+        
+                    {% if banner == "0" %}
+                    
+                      <header>
+                      <div class="alert alert-info" role="alert">
+                 
+                        Password Changed!
+                        
+                      </header>
+                    {% endif %}
+                    
+                    {% if banner == "1" %}
+                       <header>
+                       <div class="alert alert-info" role="alert">
+                 
+                        BOUGHT!
+                        
+                       </header>
+                    {% endif %}
+                    
+                    {% if banner== "2" %}
+                       <header>
+                       <div class="alert alert-info" role="alert">
+                 
+                         REGISTERED!
+                        
+                       </header>
+                    {% endif %}
+                    
+                    {% if banner== "3" %}
+                       <header>
+                       <div class="alert alert-info" role="alert">
+                 
+                         SOLD!
+                        
+                      </header>
+                    {% endif %}
+                    
+                    </div>
+  
+  
+  <div>
+      <table class ="table table-striped">
+          <thead>
+              <tr>
+                  <th> <b>SYMBOL </b></th>
+                  <th> <b>NAME </b></th>
+                  <th> <b>SHARES </b></th>
+                  <th> <b>PRICE </b></th>
+                  <th> <b>TOTAL </b></th>
+              </tr>
+          </thead>
+          {% for stock in result %}
+          
+          <tr>
+              <td>{{stock.symbol}}</td>
+              <td>{{stock.name}}</td>
+              <td>{{stock.shares}}</td>
+              <td>{{stock.price}}</td>
+              <td>{{stock.total}}</td>
+             
+          </tr>
+          {% endfor %}
+          <tr>
+            <td>CASH</td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td>{{cash}}</td>
+          </tr>
+          <tr>
+            <td></td>
+            
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><b>{{initial_cash}}</b></td>
+          </tr>
+      </table>
+  </div>
+  
+{% endblock %}

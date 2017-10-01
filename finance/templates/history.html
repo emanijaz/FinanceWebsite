@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  HISTORY
+  
+{% endblock %}
+
+{% block main %}
+
+<div>
+      <table class ="table table-striped">
+          <thead>
+              <tr>
+                  <th> <b>SYMBOL </b></th>
+                  <th> <b>SHARES </b></th>
+                  <th> <b>PRICE </b></th>
+                  <th> <b>TRANSACTED </b></th>
+              </tr>
+          </thead>
+          {% for stock in result %}
+          
+          <tr>
+              <td>{{stock.symbol}}</td>
+              <td>{{stock.shares}}</td>
+              <td>{{stock.price}}</td>
+              <td>{{stock.TimeDate}}</td>
+             
+          </tr>
+          {% endfor %}
+       </table>
+</div>
+{% endblock %}
